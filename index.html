@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brito.Engine | Core</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#020617] text-slate-100 flex items-center justify-center min-h-screen p-4 font-sans">
+
+    <main class="max-w-5xl w-full flex flex-col md:flex-row overflow-hidden rounded-[2.5rem] bg-white/[0.02] backdrop-blur-xl border border-blue-500/20 shadow-2xl">
+        
+        <aside class="p-10 w-full md:w-2/5 space-y-8 bg-white/5 border-b md:border-b-0 md:border-r border-white/10">
+            <header>
+                <h1 class="text-2xl font-black tracking-tighter text-blue-500 uppercase italic">Brito.Tasks</h1>
+                <p class="text-blue-300/40 text-[10px] font-bold tracking-[0.2em]">CORE TECHNICAL TASKS</p>
+            </header>
+
+            <nav class="space-y-4">
+                <div class="group">
+                    <label for="tech-select" class="text-[10px] font-bold text-blue-200/50 uppercase ml-1 block mb-2">Tecnologia</label>
+                    <select id="tech-select" class="w-full bg-slate-900 border border-slate-700 p-4 rounded-xl outline-none focus:border-blue-500 transition-all text-sm cursor-pointer hover:bg-slate-800">
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="react_ts">React & TypeScript</option>
+                        <option value="html_css">HTML & CSS UI</option>
+                        <option value="styling">Tailwind & BootStrap</option>
+                        <option value="sql">PostgreSQL</option>
+                    </select>
+                </div>
+
+                <div class="group">
+                    <label for="level-select" class="text-[10px] font-bold text-blue-200/50 uppercase ml-1 block mb-2">Complexidade</label>
+                    <select id="level-select" class="w-full bg-slate-900 border border-slate-700 p-4 rounded-xl outline-none focus:border-blue-500 transition-all text-sm cursor-pointer hover:bg-slate-800">
+                        <option value="Iniciante">Iniciante</option>
+                        <option value="Média">Média</option>
+                        <option value="Avançada">Avançada</option>
+                    </select>
+                </div>
+
+                <button id="generate-btn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-extrabold py-5 rounded-2xl transition-all active:scale-95 shadow-lg shadow-blue-600/30 uppercase tracking-widest text-xs">
+                    Gerar Atividade
+                </button>
+            </nav>
+        </aside>
+
+        <section class="p-12 w-full md:w-3/5 flex flex-col justify-center bg-blue-950/5 relative">
+            
+            <div id="empty-state" class="text-center opacity-20 italic text-sm">
+                Aguardando parâmetros para geração...
+            </div>
+
+            <article id="result-state" class="hidden animate-in fade-in slide-in-from-bottom-4 duration-500">
+                <header class="mb-6">
+                    <span id="badge-level" class="px-4 py-1 text-[10px] font-black rounded-full border uppercase tracking-widest bg-white/5">--</span>
+                </header>
+
+                <h2 id="task-title" class="text-3xl font-extrabold text-white mb-6 leading-tight tracking-tight italic">--</h2>
+                
+                <div class="p-8 rounded-2xl bg-black/60 border border-white/5">
+                    <p id="task-text" class="text-blue-200/90 text-lg leading-relaxed font-mono italic">--</p>
+                </div>
+
+                <footer class="mt-6">
+                    <button id="copy-btn" class="text-[10px] text-blue-500/60 hover:text-blue-400 uppercase font-bold tracking-widest transition-colors flex items-center gap-2 group">
+                        <span class="group-hover:translate-x-1 transition-transform">></span> Copiar Enunciado
+                    </button>
+                </footer>
+            </article>
+        </section>
+    </main>
+
+    <script src="src/js/api.js"></script>
+    <script src="src/js/main.js"></script>
+</body>
+</html>
