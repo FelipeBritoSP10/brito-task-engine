@@ -1,7 +1,9 @@
 const britoTasks = {
     javascript: [
         { level: "Iniciante", title: "Arrow Function Soma", task: "Crie uma arrow function que receba n1 e n2 e retorne a soma no console." },
+        { leve:  "Iniciante", title: "Manipulação de Arrays", task: "No array ['React', 'Vue'], adicione 'Angular' ao final e exiba o novo tamanho do array." },
         { level: "Iniciante", title: "Criação de Objeto", task: "Crie um objeto 'aluno' com nome e curso, e exiba no console usando Template Strings." },
+        { level: "Iniciante", title: "Remoção em Array", task: "No array ['Maçã', 'Banana', 'Uva'], remova o último item e exiba a lista atualizada." },
         { level: "Iniciante", title: "Condicional Simples", task: "Verifique se um número é maior que 10 e exiba 'Sim' ou 'Não' no console." },
         { level: "Média", title: "Filtro de Array", task: "Dado [10, 25, 30, 50], use .filter() para criar um novo array apenas com valores > 20." },
         { level: "Média", title: "Map de Preços", task: "Use .map() para triplicar os valores de um array de números [5, 10, 15]." },
