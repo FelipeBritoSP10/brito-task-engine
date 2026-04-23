@@ -1,4 +1,4 @@
-# BRITO.TASKS | Core Technical Tasks
+**# BRITO.TASKS | Core Technical Tasks
 
 O BRITO.TASKS é um ecossistema dinâmico de geração de exercícios técnicos, projetado para elevar o nível de aprendizado em lógica de programação e arquitetura de software. Este projeto foca na entrega de desafios práticos e personalizados, unindo uma interface de alta fidelidade visual com uma estrutura de código robusta e escalável.
 
@@ -32,6 +32,41 @@ Para garantir que o BRITO.TASKS entregue uma experiência livre de bugs:
 
 - Performance: Carregamento otimizado de assets e manipulação eficiente do DOM para garantir 60fps em dispositivos móveis.
 
+⚙️ Core Engine: A API de Dados com JavaScript
+O diferencial técnico do projeto reside na sua Engine de Distribuição de Tarefas. Em vez de uma estrutura estática, criamos uma "API interna" organizada em um objeto literal que simula um serviço de backend, permitindo consultas rápidas e filtragem dinâmica sem latência de rede.
+
+## 🧠 Lógica de Filtragem e Acesso
+
+A API interna permite que a interface se comunique com os dados através de chaves dinâmicas, garantindo escalabilidade infinita.
+
+Destaques técnicos:
+
+- Acesso por Chave Dinâmica: Utilização de britoTasks[selectedTech] para acesso performático.
+
+- Filtragem de Complexidade: Uso do método .filter() para realizar o match exato com o campo level.
+
+- Algoritmo de Randomização: Sistema que seleciona índices aleatórios para garantir que o usuário receba desafios variados.
+
+```javascript
+// Exemplo da estrutura de resposta da nossa API interna
+{ 
+  level: "Média", 
+  title: "Filtro de Array", 
+  task: "Dado [10, 25, 30, 50], use .filter() para criar um novo array apenas com valores > 20." 
+}
+```
+
+# 🚀 Como Executar o Projeto
+
+```bash
+# Clone o repositório
+git clone https://github.com/FelipeBritoSP10/brito-task-engine
+
+# Acesse a pasta do projeto
+cd brito-task-engine
+
+```
+
 ## 🚀 Roadmap de Evolução
 O que está por vir no ecossistema:
 
@@ -47,4 +82,4 @@ O que está por vir no ecossistema:
 
 Este projeto é a base técnica para as sessões de minha mentoria.
 
-Mentoria: Projetado para simular o ambiente real de trabalho, o uso desta ferramenta auxilia na transição de desenvolvedores para o nível profissional.
+Mentoria: Projetado para simular o ambiente real de trabalho, o uso desta ferramenta auxilia na transição de desenvolvedores para o nível profissional.**
