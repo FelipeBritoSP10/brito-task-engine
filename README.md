@@ -1,4 +1,4 @@
-**# BRITO.TASKS | Core Technical Tasks
+# BRITO.TASKS | Core Technical Tasks
 
 O BRITO.TASKS é um ecossistema dinâmico de geração de exercícios técnicos, projetado para elevar o nível de aprendizado em lógica de programação e arquitetura de software. Este projeto foca na entrega de desafios práticos e personalizados, unindo uma interface de alta fidelidade visual com uma estrutura de código robusta e escalável.
 
