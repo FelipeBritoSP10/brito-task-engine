@@ -56,6 +56,21 @@ Destaques técnicos:
 }
 ```
 
+## ⚙️ Compilador Integrado
+
+O **Compilador Integrado** é o núcleo do BRITO.TASKS, transformando a plataforma em um ambiente de codificação responsivo e multilíngue diretamente no navegador.
+
+- **Editor Monaco**: fornece realce de sintaxe dinâmico, layout automático, fontes maiores e quebra automática de texto para legibilidade móvel.
+- **Execução em vários idiomas**: 
+- **JavaScript**: Executado nativamente via `Function` com interceptação do console. 
+- **Python**: Desenvolvido por **Pyodide**, um tempo de execução Python baseado em WebAssembly. 
+- **TypeScript**: Transpilado em tempo real usando o compilador TypeScript oficial (`ts.transpile`). 
+- **HTML/CSS**: Renderizado instantaneamente através de `iframe.srcdoc`. 
+- **Tailwind CSS**: injetado dinamicamente via CDN (`https://cdn.tailwindcss.com`).
+- **Terminal interativo**: estilizado com Tailwind, simulando um console real para feedback imediato.
+- **Visualização responsiva**: área dedicada para renderização de saídas HTML, CSS e Tailwind, otimizada para dispositivos móveis e desktop.
+- **Navegação**: botão Voltar com ícone SVG integrado ao cabeçalho para fluxo intuitivo do usuário.
+
 # 🚀 Como Executar o Projeto
 
 ```bash
