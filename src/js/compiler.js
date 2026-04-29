@@ -10,12 +10,12 @@ require(['vs/editor/editor.main'], function () {
     language: 'javascript',
     theme: 'vs-dark',
     automaticLayout: true,
-    fontSize: 28, // larger font for mobile readability
+    fontSize: 28,
     fontFamily: 'JetBrains Mono',
     wordWrap: 'on'
   });
 
-  // Change Monaco language dynamically based on dropdown selection
+  // Change Monaco language dynamically
   document.getElementById("lang-select").addEventListener("change", function () {
     const lang = this.value;
     let monacoLang = "javascript";
@@ -34,7 +34,22 @@ function britoLog(msg, color = "text-emerald-500") {
   const term = document.getElementById("terminal");
   const div = document.createElement("div");
   div.className = `${color} mb-1 border-l-2 border-current pl-2`;
-  div.textContent = "» " + (typeof msg === 'object' ? JSON.stringify(msg, null, 2) : msg);
+
+  let output;
+
+  if (Array.isArray(msg)) {
+    output = msg.map(item =>
+      typeof item === 'object'
+        ? JSON.stringify(item, null, 2)
+        : item
+    ).join(" ");
+  } else {
+    output = typeof msg === 'object'
+      ? JSON.stringify(msg, null, 2)
+      : msg;
+  }
+
+  div.textContent = "» " + output;
   term.appendChild(div);
   term.scrollTop = term.scrollHeight;
 }
@@ -53,8 +68,11 @@ document.getElementById("run-btn").onclick = async function () {
   try {
     if (lang === 'javascript') {
       const oldLog = console.log;
-      console.log = (...args) => britoLog(args.join(" "));
+
+      console.log = (...args) => britoLog(args);
+
       new Function(code)();
+
       console.log = oldLog;
     }
 
@@ -68,9 +86,12 @@ document.getElementById("run-btn").onclick = async function () {
     else if (lang === 'typescript') {
       britoLog("Transpiling TypeScript...", "text-blue-400");
       const js = ts.transpile(code);
+
       const oldLog = console.log;
-      console.log = (...args) => britoLog(args.join(" "));
+      console.log = (...args) => britoLog(args);
+
       new Function(js)();
+
       console.log = oldLog;
     }
 
